@@ -1,0 +1,17 @@
+
+node_modules
+dist
+logs
+coverage
+tsm
+
+*.local
+*.log
+npm-debug.log*
+pnpm-debug.log*
+*.scss.d.ts
+.cache
+.parcel-cache
+.eslintcache
+.DS_Store
+

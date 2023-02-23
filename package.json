@@ -1,0 +1,69 @@
+{
+  "name": "parcel-preact-template",
+  "source": "src/index.html",
+  "type": "module",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build --public-url ./",
+    "tsm": "typed-scss-modules src -n none --L error -o tsm",
+    "tsc": "pnpm run tsm && tsc --noEmit",
+    "lint": "eslint src",
+    "prettier": "prettier --write src",
+    "test": "vitest run",
+    "tsc:husky": "pnpm run tsm && tsc-files --noEmit",
+    "lint:husky": "eslint",
+    "prettier:husky": "prettier --write",
+    "test:husky": "vitest related",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "pnpm run tsc:husky",
+      "pnpm run lint:husky",
+      "pnpm run prettier:husky",
+      "pnpm run test:husky"
+    ],
+    "*.{html,css,scss,js,json,md}": [
+      "pnpm run prettier:husky"
+    ]
+  },
+  "alias": {
+    "react": "preact/compat",
+    "react-dom/test-utils": "preact/test-utils",
+    "react-dom": "preact/compat",
+    "react/jsx-runtime": "preact/jsx-runtime"
+  },
+  "devDependencies": {
+    "@parcel/core": "^2.8.3",
+    "@parcel/transformer-sass": "^2.8.3",
+    "@preact/preset-vite": "^2.5.0",
+    "@testing-library/preact": "^3.2.3",
+    "@types/node": "^18.14.0",
+    "@types/react": "^18.0.28",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "classnames": "^2.3.2",
+    "eslint": "^8.34.0",
+    "eslint-config-preact": "^1.3.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "happy-dom": "^8.7.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.1.2",
+    "parcel": "^2.8.3",
+    "preact": "^10.12.1",
+    "prettier": "^2.8.4",
+    "tsc-files": "^1.1.3",
+    "typed-scss-modules": "^7.0.2",
+    "typescript": "^4.9.5",
+    "vitest": "^0.28.5"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@babel/core",
+        "vite"
+      ]
+    }
+  }
+}
