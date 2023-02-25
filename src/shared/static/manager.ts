@@ -104,19 +104,18 @@ export class Manager {
   }
 
   public static sprite(spritesheetName: string, spriteName: string) {
-    return Manager.app.loader.resources[spritesheetName].spritesheet.textures[
+    return Manager.app!.loader.resources[spritesheetName].spritesheet!.textures[
       spriteName
     ];
   }
 
   public static animatedSprite(spritesheetName: string, animationName: string) {
-    return Manager.app.loader.resources[spritesheetName].spritesheet.animations[
-      animationName
-    ];
+    return Manager.app!.loader.resources[spritesheetName].spritesheet!
+      .animations[animationName];
   }
 
   public static sound(soundName: string) {
-    return Manager.app.loader.resources[soundName]?.sound;
+    return Manager.app!.loader.resources[soundName]?.sound;
   }
 
   private static update = (delta: number) => {
