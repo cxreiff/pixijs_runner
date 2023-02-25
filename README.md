@@ -1,3 +1,3 @@
-# parcel-preact-template
+# pixijs_runner
 
-Template for creating a web app using parcel, preact, and vitest.
+Wrapper code for common pixijs app functionality, along with specific apps.

@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  background: black;
+}
+
+#root {
+  aspect-ratio: 16 / 9;
+  max-height: 100%;
+  margin: auto;
+  position: absolute;
+  inset: 0;
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#root > canvas {
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+}
